@@ -16,7 +16,7 @@ Rexfile:
  repository 'static', url => 'git@my-git-server.local',
                         type => 'git';
 
- task "deploy", sub {
+ task 'deploy', group => 'static', sub {
     checkout 'static', branch => 'stable';
     sync 'static/*', '/var/www/html';
  };
