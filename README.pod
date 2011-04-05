@@ -1,0 +1,23 @@
+=pod
+
+=head2 Rex::SCM
+
+This is a Rex Module for SCM access (like git, svn, ...).
+
+=head2 Example
+
+Rexfile:
+
+ use Rex::SCM;
+ use Rex::Commands::Rsync;
+
+ group static => 'static01', 'static02';
+
+ repository 'static', url => 'git@my-git-server.local',
+                        type => 'git';
+
+ task "deploy", sub {
+    checkout 'static', branch => 'stable';
+    sync 'static/*', '/var/www/html';
+ };
+
