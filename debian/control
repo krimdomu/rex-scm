@@ -1,0 +1,13 @@
+Source: rex-scm
+Section: admin
+Priority: optional
+Maintainer: Jan Gehring <jan.gehring@gmail.com>
+Build-Depends: debhelper (>= 4), libnet-ssh2-perl (>= 0.33), perl (>= 5.10.0)
+Standards-Version: 3.5.1
+Homepage: https://github.com/krimdomu/Rex
+
+Package: rex
+Architecture: all
+Depends: perl (>= 5.10.0), libnet-ssh2-perl (>= 0.33), rex (>= 0.2.0)
+Suggests: git-core, subversion
+Description: Rex Module for SCM access.
