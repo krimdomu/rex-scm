@@ -1,6 +1,6 @@
 package Rex::SCM;
 
-our $VERSION = "0.1";
+our $VERSION = "0.2.0";
 
 use strict;
 use warnings;
@@ -16,7 +16,7 @@ sub repository {
 }
 
 sub checkout {
-   my ($name, %data) = @_;
+   my ($name, $co_to, %data) = @_;
 
    my $type = $REPOS{"$name"}->{"type"};
    my $class = "Rex::SCM::\u$type";
@@ -27,7 +27,7 @@ sub checkout {
    }
 
    my $scm = $class->new;
-   $scm->checkout($REPOS{$name}, $name, \%data);
+   $scm->checkout($REPOS{$name}, $co_to, \%data);
 }
 
 1;
