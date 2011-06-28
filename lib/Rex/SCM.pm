@@ -1,6 +1,6 @@
 package Rex::SCM;
 
-our $VERSION = "0.2.0";
+our $VERSION = "0.3.0";
 
 use strict;
 use warnings;
@@ -20,6 +20,9 @@ sub checkout {
 
    my $type = $REPOS{"$name"}->{"type"};
    my $class = "Rex::SCM::\u$type";
+
+   $co_to ||= $name;
+
    eval "use $class;";
    if($@) {
       Rex::Logger::info("Error loading SCM: $@\n");

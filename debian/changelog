@@ -1,3 +1,9 @@
+rex-scm (0.3.0) unstable; urgency=low
+  * fixed documentation bugs
+  * added username and password option to subversion
+
+ -- Jan Gehring <jan.gehring@gmail.com>  Thu, 28 Jun 2011 20:30:00 +0200
+
 rex-scm (0.2.0) unstable; urgency=low
   * added subversion support
 
